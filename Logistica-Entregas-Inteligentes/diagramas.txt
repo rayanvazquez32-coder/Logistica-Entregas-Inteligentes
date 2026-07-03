@@ -1,0 +1,108 @@
+Diagrama de Clases (UML)
+
++----------------------+
+|       Cliente        |
++----------------------+
+| id                   |
+| nombre               |
+| direccion            |
+| historial_pedidos[]  |
++----------------------+
+| agregar_pedido()     |
++----------------------+
+
+            1
+            |
+            | tiene
+            |
+            *
++----------------------+
+|       Paquete        |
++----------------------+
+| codigo               |
+| peso                 |
+| destino              |
+| estado               |
+| cliente              |
++----------------------+
+| cambiar_estado()     |
++----------------------+
+
+            *
+            |
+            | asigna
+            |
+            *
++----------------------+
+|     Repartidor       |
++----------------------+
+| nombre               |
+| vehiculo             |
+| zona_actual          |
+| paquetes_asignados[] |
++----------------------+
+| asignar_paquete()    |
++----------------------+
+
++----------------------+
+|        Grafo         |
++----------------------+
+| grafo{}              |
++----------------------+
+| agregar_zona()       |
+| conectar()           |
+| buscar_ruta()        |
++----------------------+
+
+
+
+        Diagrama Conceptual del
+           Grafo de la Ciudad
+                  |
+                  |
+                  v
+
+             Zona Norte
+                  |
+                (3 km)
+                  |
+            Avenida 1
+             /      \
+         (2 km)    (4 km)
+           /          \
+      Centro ------- Zona Sur
+           \            /
+          (5 km)     (2 km)
+             \        /
+             Parque Central
+
+
+
+         Diagrama de Flujo de 
+        Búsqueda de Ruta (DFS)
+                  |
+                  |
+                  v
+INICIO
+   |
+Ingresar origen y destino
+   |
+¿Origen = Destino?
+   |
+ Sí ---------> Mostrar ruta encontrada
+   |
+ No
+   |
+Marcar nodo como visitado
+   |
+Recorrer nodos vecinos
+   |
+¿Hay vecinos sin visitar?
+   |
+ Sí ---------> Llamar buscar_ruta() (recursividad)
+   |
+ No
+   |
+Mostrar "No existe ruta"
+   |
+  FIN
